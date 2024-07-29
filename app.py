@@ -1,5 +1,5 @@
 import streamlit as st
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 st.title("Image Classification Of Fashion Items")
 # import streamlit as st
 
