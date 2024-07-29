@@ -1,3 +1,3 @@
 import streamlit as st
 
-st.write("Hello World")
+st.title("Image Classification Of Fashion Items")
