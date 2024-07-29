@@ -1,6 +1,6 @@
 numpy==1.23.5
 streamlit==1.28.1
-opencv-python-headless
+opencv-python-headless==4.6.0.66
 librosa==0.10.1
 tensorflow==2.12.0
 matplotlib==3.7.1
