@@ -37,13 +37,13 @@ def main():
 		# img=np.abs(256-img)
 
 		class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
-		fig,ax=plt.subplots()
-		ax.subplot(1,2,1)
+		fig,ax=plt.figure()
 		ax.imshow(final[0])
-		ax.subplot(1,2,2)
+		ax.subplot(1,2,1)
 		ax.bar(class_names, probabilities)
 		ax.xticks(range(10), class_names, rotation=45)
 		ax.ylabel('Probability')
+		ax.subplot(1,2,2)
 		st.pyplot(fig)
 
 if __name__ == '__main__':
