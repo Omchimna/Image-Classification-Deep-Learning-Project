@@ -3,6 +3,7 @@ import streamlit as st
 import numpy as np
 from PIL import Image, ImageOps 
 from matplotlib import pyplot as plt
+from keras.models import load_model
 
 def image_pre_pro(file):
   # image = cv2.imread(file)
@@ -18,14 +19,24 @@ def main():
     img = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1)
     # image=image[:, ::-1]  
     final=image_pre_pro(img)
-  # img=np.abs(256-img)
+    # img=np.abs(256-img)
+
+  
+  model = load_model('final_model.keras')
+  tf_img=tf.convert_to_tensor(final)
+  result = model.predict(tf_img)
+
+  class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
+                 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
+  probabilities = result[0]
+  
   fig,ax=plt.subplots()
   # ax.subplot(1,2,1)
-  ax.imshow(final)
-  # plot_image(i, predictions[i], test_labels, test_images)
+  ax[0].imshow(final)
   # ax.subplot(1,2,2)
-  # plot_value_array(i, predictions[i],  test_labels)
-  # plt.show()
+  ax[1].bar(class_names, probabilities)
+  ax[1].xticks(range(10), class_names, rotation=45)
+  ax[1].ylabel('Probability')
   st.pyplot(fig)
 
 if __name__ == '__main__':
