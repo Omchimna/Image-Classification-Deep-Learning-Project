@@ -14,9 +14,10 @@ def load_model():
 def final_img(file):
 	# image = cv2.imread(file)
 	img = cv2.imdecode(np.frombuffer(file.read(), np.uint8), 1) 
-	final_img = cv2.cvtColor(img.astype(np.uint8), cv2.COLOR_BGR2GRAY,)
-	small_img = cv2.resize(final_img, (28,28), )
-	return small_img
+	img_1 = cv2.cvtColor(img.astype(np.uint8), cv2.COLOR_BGR2GRAY,)
+	img_2 = cv2.resize(img_1, (28,28), )
+	img_3 = (np.expand_dims(img_2,0))
+	return img_3
 
 def predict_class(image, model):
 	pre_img = tf.convert_to_tensor(image)
