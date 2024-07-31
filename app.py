@@ -19,7 +19,8 @@ def main():
   if uploaded_file is not None:
     img = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1)
     # image=image[:, ::-1]  
-    final=image_pre_pro(img)
+  
+  final=image_pre_pro(img)
     # img=np.abs(256-img)
 
   
