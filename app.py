@@ -47,6 +47,7 @@ def main():
 		plt.ylabel('Probability')
 		# plt.subplot(1,2,2)
 		# plt.axis('off')
+		fig.figsize=(10,5)
 		st.pyplot(fig)
 
 if __name__ == '__main__':
