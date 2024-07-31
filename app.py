@@ -1,7 +1,7 @@
-import streamlit as st
 import cv2
+import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
+# from PIL import Image
 
 def main():
   st.title("Image Classification Of Fashion Items")
