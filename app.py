@@ -29,7 +29,7 @@ def main():
   # plt.subplot(1,2,2)
   # plot_value_array(i, predictions[i],  test_labels)
   plt.show()
-  st.fig(fig1)
+  st.image(fig1)
 
 if __name__ == '__main__':
   main()
