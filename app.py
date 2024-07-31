@@ -16,10 +16,9 @@ def main():
   st.title("Image Classification Of Fashion Items")
   st.text("This Works")  
   uploaded_file = st.file_uploader("Upload Image" ,type=['jpg', 'png', 'jpeg'])
-  if uploaded_file is not None:
-    global img = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1) #if uploaded_file not None else np.array([[0]*28]*28)
-  else:
-    global img = np.array([[0]*28]*28)
+  # if uploaded_file is not None:
+  img = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1) #if uploaded_file not None else np.array([[0]*28]*28)
+
     # image=image[:, ::-1]  
   
   final=image_pre_pro(img)
