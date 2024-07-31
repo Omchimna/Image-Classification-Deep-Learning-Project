@@ -17,7 +17,7 @@ def main():
   st.text("This Works")  
   uploaded_file = st.file_uploader("Upload Image" ,type=['jpg', 'png', 'jpeg'])
   # if uploaded_file is not None:
-  img = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1)
+  img = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1) if uploaded_file not None else np.array([[0]*28]*28)
     # image=image[:, ::-1]  
   
   final=image_pre_pro(img)
@@ -25,7 +25,7 @@ def main():
 
   
   model = load_model('final_model.keras')
-  tf_img=tf.convert_to_tensor(final)
+  tf_img = tf.convert_to_tensor(final) if final not None else np.array([[0]*28]*28)
   result = model.predict(tf_img)
 
   class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
