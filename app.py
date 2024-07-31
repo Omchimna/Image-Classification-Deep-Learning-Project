@@ -28,18 +28,17 @@ def main():
   st.title("Image Classification Of Fashion Items")
   st.text("This Works")  
   uploaded_file = st.file_uploader("Upload Image" ,type=['jpg', 'png', 'jpeg'])
-  # if uploaded_file is not None:
-  img = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1) #if uploaded_file not None else np.array([[0]*28]*28)
-  final = image_pre_pro(img)
-    # img=np.abs(256-img)
-
-  if final is not None:
-    model = load_model()
-    result = predict_class(final,model)
-
+  if uploaded_file is not None:
+  	img = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1) #if uploaded_file not None else np.array([[0]*28]*28)
+  	final = image_pre_pro(img)
+	model = load_model()
+	result = predict_class(final,model)
+	probabilities = result[0]
+	# img=np.abs(256-img)
+    
   class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                  'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
-  probabilities = result[0]
+  
   
   fig,ax=plt.subplots()
   # ax.subplot(1,2,1)
