@@ -40,7 +40,7 @@ def main():
 		ax=plt.figure(figsize=(20,10))
 		plt.imshow(final[0])
 		plt.subplot(1,2,1)
-		plt.axis('off')
+		# plt.axis('off')
 		# st.image(ax1)
 		plt.bar(class_names, probabilities)
 		plt.xticks(range(10), class_names, rotation=45)
