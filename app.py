@@ -16,20 +16,17 @@ def main():
   uploaded_file = st.file_uploader("Upload Image" ,type=['jpg', 'png', 'jpeg'])
   if uploaded_file is not None:
     img = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1)
-  # image=image[:, ::-1]
-  # BGR -> RGB  
-  #type(image.shape)
-  # img2 = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)   
+    # image=image[:, ::-1]  
     final=image_pre_pro(img)
   # img=np.abs(256-img)
-  # plt.figure()
-  # plt.subplot(1,2,1)
-  # plt.imshow(final)
+  fig,ax=plt.figure()
+  # ax.subplot(1,2,1)
+  ax.imshow(final)
   # plot_image(i, predictions[i], test_labels, test_images)
-  # plt.subplot(1,2,2)
+  # ax.subplot(1,2,2)
   # plot_value_array(i, predictions[i],  test_labels)
   # plt.show()
-  st.image(final)
+  st.pyplot(fig)
 
 if __name__ == '__main__':
   main()
