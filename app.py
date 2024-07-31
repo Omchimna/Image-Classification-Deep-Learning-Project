@@ -3,7 +3,7 @@ import streamlit as st
 import numpy as np
 from PIL import Image, ImageOps 
 from matplotlib import pyplot as plt
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 
 def image_pre_pro(file):
   # image = cv2.imread(file)
