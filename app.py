@@ -41,10 +41,10 @@ def main():
 		# plt.subplot(1,2,1)
 		# plt.axis('off')
 		# st.image(ax1)
-		ax[1].figure(figsize=(1,1))
 		ax[1].bar(class_names, probabilities)
 		plt.xticks(range(10), class_names, rotation=45)
 		plt.ylabel('Probability')
+		plt.figure(figsize=(1,1))
 		# plt.subplot(1,2,2)
 		# plt.axis('off')
 		
