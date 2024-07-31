@@ -40,11 +40,13 @@ def main():
 		ax=plt.figure()
 		plt.imshow(final[0])
 		plt.subplot(2,1,1)
+		plt.axis('off')
 		# st.image(ax1)
 		plt.bar(class_names, probabilities)
 		plt.xticks(range(10), class_names, rotation=45)
 		plt.ylabel('Probability')
 		plt.subplot(2,1,2)
+		plt.axis('off')
 		st.pyplot(ax)
 
 if __name__ == '__main__':
