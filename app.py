@@ -11,9 +11,10 @@ def load_model():
 	model = tf.keras.models.load_model('./final_model.keras')
 	return model
 
-def image_pre_pro(file):
+def final_img(file):
 	# image = cv2.imread(file)
-	final_img = cv2.cvtColor(file.astype(np.uint8), cv2.COLOR_BGR2GRAY,)
+	img = cv2.imdecode(np.frombuffer(file.read(), np.uint8), 1) 
+	final_img = cv2.cvtColor(img.astype(np.uint8), cv2.COLOR_BGR2GRAY,)
 	small_img = cv2.resize(final_img, (28,28), )
 	return small_img
 
@@ -28,8 +29,7 @@ def main():
 	st.text("This Works")  
 	uploaded_file = st.file_uploader("Upload Image" ,type=['jpg', 'png', 'jpeg'])
 	if uploaded_file is not None:
-		img = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1) #if uploaded_file not None else np.array([[0]*28]*28)
-		final = image_pre_pro(img)
+		final = final_img(uploaded_file)
 		model = load_model()
 		result = predict_class(final,model)
 		probabilities = result[0]
