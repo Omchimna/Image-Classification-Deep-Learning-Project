@@ -44,7 +44,7 @@ def main():
 		# st.image(ax1)
 		ax[1].bar(class_names, probabilities)
 		plt.xticks(range(10), class_names, rotation=45)
-		ax[1].ylabel('Probability')
+		plt.ylabel('Probability')
 		# plt.subplot(1,2,2)
 		# plt.axis('off')
 		st.pyplot(fig)
