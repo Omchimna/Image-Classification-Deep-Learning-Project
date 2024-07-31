@@ -4,10 +4,10 @@ import numpy as np
 from PIL import Image, ImageOps 
 
 def image_pre_pro(file):
-  image = cv2.imread(file)
+  # image = cv2.imread(file)
   # small_img=cv2.resize(image, (28,28))
-  img = Image.open(image,mode='r')
-  small_img=img.resize(28,28)
+  img = Image.open(file)
+  small_img=img.resize((28,28))
   final_img=ImageOps.grayscale(small_img)
   return final_img
 
