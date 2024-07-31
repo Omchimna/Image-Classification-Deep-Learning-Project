@@ -2,6 +2,7 @@ import cv2
 import streamlit as st
 import numpy as np
 from PIL import Image, ImageOps 
+from matplotlib import pyplot as plt
 
 def image_pre_pro(file):
   # image = cv2.imread(file)
