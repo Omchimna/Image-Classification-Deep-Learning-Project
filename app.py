@@ -18,16 +18,13 @@ def main():
   uploaded_file = st.file_uploader("Upload Image" ,type=['jpg', 'png', 'jpeg'])
   # if uploaded_file is not None:
   img = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1) #if uploaded_file not None else np.array([[0]*28]*28)
-
-    # image=image[:, ::-1]  
-  
-  final=image_pre_pro(img)
+  final = image_pre_pro(img)
     # img=np.abs(256-img)
 
-  
-  model = load_model('final_model.keras')
-  tf_img = tf.convert_to_tensor(final) #if final not None else np.array([[0]*28]*28)
-  result = model.predict(tf_img)
+  if final is not None:
+    model = load_model('final_model.keras')
+    tf_img = tf.convert_to_tensor(final) #if final not None else np.array([[0]*28]*28)
+    result = model.predict(tf_img)
 
   class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                  'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
