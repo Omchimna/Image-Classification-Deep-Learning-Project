@@ -36,7 +36,7 @@ def main():
 		# img=np.abs(256-img)
 
 		class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
-		fig,ax=plt.subplots(1,2)
+		fig,ax=plt.subplots(1,2,sharey=True)
 		ax[0].imshow(final[0])
 		# plt.subplot(1,2,1)
 		# plt.axis('off')
@@ -44,7 +44,6 @@ def main():
 		ax[1].bar(class_names, probabilities)
 		plt.xticks(range(10), class_names, rotation=45)
 		plt.ylabel('Probability')
-		plt.figure(figsize=(1,1))
 		# plt.subplot(1,2,2)
 		# plt.axis('off')
 		
