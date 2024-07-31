@@ -40,11 +40,12 @@ def main():
 		# ax=plt.figure()
 		ax1=plt.imshow(final[0])
 		# plt.subplot(2,1,1)
+		st.pyplot(ax1)
 		ax2=plt.bar(class_names, probabilities)
 		plt.xticks(range(10), class_names, rotation=45)
 		plt.ylabel('Probability')
 		# plt.subplot(2,1,2)
-		st.pyplot([ax1,ax2])
+		st.pyplot(ax2)
 
 if __name__ == '__main__':
 	main()
