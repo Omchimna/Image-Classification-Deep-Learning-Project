@@ -5,10 +5,11 @@ from PIL import Image, ImageOps
 
 def image_pre_pro(file):
   # image = cv2.imread(file)
-  # small_img=cv2.resize(image, (28,28))
   img = Image.open(file)
-  small_img=img.resize((28,28))
-  final_img=ImageOps.grayscale(small_img)
+  img=np.array(img)
+  small_img=cv2.resize(img, (28,28))
+  # small_img=img.resize((28,28))
+  final_img= cv2.cvtColor(small_img, cv2.COLOR_BGR2GRA
   return final_img
 
 def main():
