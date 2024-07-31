@@ -17,6 +17,13 @@ def image_pre_pro(file):
   small_img = cv2.resize(final_img, (28,28), )
   return small_img
 
+
+def predict_class(image, model):
+	pre_img = tf.convert_to_tensor(image)
+	prediction = model.predict(pre_img)
+
+	return prediction
+
 def main():
   st.title("Image Classification Of Fashion Items")
   st.text("This Works")  
@@ -28,8 +35,7 @@ def main():
 
   if final is not None:
     model = load_model()
-    # tf_img = tf.convert_to_tensor(final) #if final not None else np.array([[0]*28]*28)
-    result = model.predict(tf.convert_to_tensor(final))
+    result = predict_class(final,model)
 
   class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                  'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
