@@ -37,6 +37,7 @@ def main():
 
 		class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 		fig,ax=plt.subplots(1,2)
+		fig.figure(figsize=(6,3))
 		ax[0].imshow(final[0])
 		# plt.subplot(1,2,1)
 		# plt.axis('off')
@@ -46,7 +47,7 @@ def main():
 		plt.ylabel('Probability')
 		# plt.subplot(1,2,2)
 		# plt.axis('off')
-		plt.figure(figsize=(6,3))
+		
 		st.pyplot(fig)
 
 if __name__ == '__main__':
