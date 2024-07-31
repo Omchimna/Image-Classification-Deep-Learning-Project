@@ -3,17 +3,22 @@ import streamlit as st
 import numpy as np
 # from PIL import Image
 
+def image_pre_pro(file):
+  image = cv2.imread(file)
+  small_img=cv2.resize(image, (28,28))
+  final_img=cv2.cvtColor(small_img, cv2.COLOR_BGR2GRAY,)
+  return final_img
+
 def main():
   st.title("Image Classification Of Fashion Items")
   st.text("This Works")  
-  uploaded_file = st.file_uploader("Upload Image")
-  image = cv2.imread(uploaded_file)   
+  uploaded_file = st.file_uploader("Upload Image" ,type=['jpg', 'png', 'jpeg'])
+     
   # image=image[:, ::-1]
   # BGR -> RGB  
   #type(image.shape)
   # img2 = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)   
-  small_img=cv2.resize(image, (28,28))
-  img=cv2.cvtColor(small_img, cv2.COLOR_BGR2GRAY,)
+  img=image_pre_pro(uploaded_file)
   # img=np.abs(256-img)
   fig1=plt.figure()
   plt.subplot(1,2,1)
