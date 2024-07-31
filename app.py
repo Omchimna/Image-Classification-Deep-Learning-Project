@@ -27,7 +27,6 @@ def predict_class(image, model):
 
 def main():
 	st.title("Image Classification Of Fashion Items")
-	st.text("This Works")  
 	uploaded_file = st.file_uploader("Upload Image" ,type=['jpg', 'png', 'jpeg'])
 	if uploaded_file is not None:
 		final = final_img(uploaded_file)
@@ -47,7 +46,7 @@ def main():
 		plt.ylabel('Probability')
 		# plt.subplot(1,2,2)
 		# plt.axis('off')
-		fig.figsize=(10,5)
+		plt.figure(figsize=(6,3))
 		st.pyplot(fig)
 
 if __name__ == '__main__':
