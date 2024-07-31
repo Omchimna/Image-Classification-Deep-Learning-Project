@@ -23,8 +23,8 @@ def main():
 
   if final is not None:
     model = load_model('./final_model.keras')
-    tf_img = tf.convert_to_tensor(final) #if final not None else np.array([[0]*28]*28)
-    result = model.predict(tf_img)
+    # tf_img = tf.convert_to_tensor(final) #if final not None else np.array([[0]*28]*28)
+    result = model.predict(tf.convert_to_tensor(final))
 
   class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                  'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
