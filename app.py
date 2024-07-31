@@ -5,7 +5,7 @@ from PIL import Image, ImageOps
 
 def image_pre_pro(file):
   image = cv2.imread(file)
-  final_img=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY,)
+  final_img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY,)
   small_img = cv2.resize(final_img, (28,28), )
   return small_img
 
