@@ -13,12 +13,13 @@ def main():
   st.title("Image Classification Of Fashion Items")
   st.text("This Works")  
   uploaded_file = st.file_uploader("Upload Image" ,type=['jpg', 'png', 'jpeg'])
-     
+  if uploaded_file is not None:
+    img = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1)
   # image=image[:, ::-1]
   # BGR -> RGB  
   #type(image.shape)
   # img2 = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)   
-  img=image_pre_pro(uploaded_file)
+    final=image_pre_pro(img)
   # img=np.abs(256-img)
   fig1=plt.figure()
   plt.subplot(1,2,1)
