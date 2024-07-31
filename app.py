@@ -9,7 +9,7 @@ def image_pre_pro(file):
   img=np.array(img)
   small_img=cv2.resize(img, (28,28))
   # small_img=img.resize((28,28))
-  final_img= cv2.cvtColor(small_img, cv2.COLOR_BGR2GRA
+  final_img= cv2.cvtColor(small_img, cv2.COLOR_BGR2GRA)
   return final_img
 
 def main():
