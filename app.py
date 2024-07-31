@@ -19,9 +19,9 @@ def main():
     # image=image[:, ::-1]  
     final=image_pre_pro(img)
   # img=np.abs(256-img)
-  fig=plt.figure()
+  fig,ax=plt.subplots()
   # ax.subplot(1,2,1)
-  plt.imshow(final)
+  ax.imshow(final)
   # plot_image(i, predictions[i], test_labels, test_images)
   # ax.subplot(1,2,2)
   # plot_value_array(i, predictions[i],  test_labels)
