@@ -1,13 +1,14 @@
 import cv2
 import streamlit as st
 import numpy as np
-# from PIL import Image
+from PIL import Image, ImageOps 
 
 def image_pre_pro(file):
   image = cv2.imread(file)
   # small_img=cv2.resize(image, (28,28))
-  
-  final_img=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY,)
+  img = Image.open(file)
+  small_img=img.resize(28,28)
+  final_img=ImageOps.grayscale(small_img)
   return final_img
 
 def main():
