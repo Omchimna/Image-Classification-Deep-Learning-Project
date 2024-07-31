@@ -37,11 +37,11 @@ def main():
 
 		class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 		fig,ax=plt.subplots(1,2)
-		ax.figure(figsize=(6,3))
 		ax[0].imshow(final[0])
 		# plt.subplot(1,2,1)
 		# plt.axis('off')
 		# st.image(ax1)
+		ax[1].figure(figsize=(1,1))
 		ax[1].bar(class_names, probabilities)
 		plt.xticks(range(10), class_names, rotation=45)
 		plt.ylabel('Probability')
