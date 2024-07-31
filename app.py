@@ -37,7 +37,7 @@ def main():
 		# img=np.abs(256-img)
 
 		class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
-		ax=plt.figure(figsize=(8,4))
+		ax=plt.figure(figsize=(2,1))
 		plt.imshow(final[0])
 		plt.subplot(2,1,1)
 		
