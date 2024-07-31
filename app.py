@@ -6,6 +6,11 @@ from matplotlib import pyplot as plt
 from tensorflow.keras.models import load_model
 import tensorflow as tf
 
+@st.cache(allow_output_mutation=True)
+def load_model():
+	model = tf.keras.models.load_model('./final_model.keras')
+	return model
+
 def image_pre_pro(file):
   # image = cv2.imread(file)
   final_img = cv2.cvtColor(file.astype(np.uint8), cv2.COLOR_BGR2GRAY,)
@@ -22,7 +27,7 @@ def main():
     # img=np.abs(256-img)
 
   if final is not None:
-    model = load_model('./final_model.keras')
+    model = load_model()
     # tf_img = tf.convert_to_tensor(final) #if final not None else np.array([[0]*28]*28)
     result = model.predict(tf.convert_to_tensor(final))
 
