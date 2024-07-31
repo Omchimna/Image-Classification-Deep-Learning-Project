@@ -22,7 +22,7 @@ def main():
     # img=np.abs(256-img)
 
   if final is not None:
-    model = load_model('final_model.keras')
+    model = load_model('./final_model.keras')
     tf_img = tf.convert_to_tensor(final) #if final not None else np.array([[0]*28]*28)
     result = model.predict(tf_img)
 
