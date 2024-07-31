@@ -37,9 +37,10 @@ def main():
 		# img=np.abs(256-img)
 
 		class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
-		ax=plt.figure()
+		ax=plt.figure(figsize=(8,4))
 		plt.imshow(final[0])
 		plt.subplot(2,1,1)
+		
 		plt.axis('off')
 		# st.image(ax1)
 		plt.bar(class_names, probabilities)
