@@ -39,11 +39,11 @@ def main():
 		class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
 		ax=plt.figure()
 		plt.imshow(final[0])
-		plt.subplot(1,2,1)
+		plt.subplot(2,1,1)
 		plt.bar(class_names, probabilities)
 		plt.xticks(range(10), class_names, rotation=45)
 		plt.ylabel('Probability')
-		plt.subplot(1,2,2)
+		plt.subplot(2,1,2)
 		st.pyplot(ax)
 
 if __name__ == '__main__':
