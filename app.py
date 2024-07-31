@@ -22,14 +22,14 @@ def main():
   # img2 = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)   
     final=image_pre_pro(img)
   # img=np.abs(256-img)
-  plt.figure()
+  # plt.figure()
   # plt.subplot(1,2,1)
-  plt.imshow(final)
+  # plt.imshow(final)
   # plot_image(i, predictions[i], test_labels, test_images)
   # plt.subplot(1,2,2)
   # plot_value_array(i, predictions[i],  test_labels)
-  plt.show()
-  # st.image(fig1)
+  # plt.show()
+  st.image(final)
 
 if __name__ == '__main__':
   main()
