@@ -3,7 +3,7 @@ import streamlit as st
 import numpy as np
 from PIL import Image, ImageOps 
 from matplotlib import pyplot as plt
-from tensorflow.keras.models import load_model
+# from tensorflow.keras.models import load_model
 import tensorflow as tf
 
 @st.cache(allow_output_mutation=True)
