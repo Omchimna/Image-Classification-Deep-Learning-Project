@@ -47,6 +47,9 @@ print('Accuracy : %.3f' % (acc * 100.0))
 ```
 >        Accuracy : 91.140%
 
+| Test Image | Result |
+|:----------:|:------:|
+| <img src=> | <img src=> |
 
 #### Refernce Links:
 - *Basic classification: Classify images of clothing* <https://www.tensorflow.org/tutorials/keras/classification>
